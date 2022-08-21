@@ -1,0 +1,67 @@
+.contentSide {
+    display: block;
+    background-color: rgb(12, 11, 11);
+    color: white;
+    min-width: 200px;
+    height: 100%;
+}
+h1 {
+    font-size: 15px;
+    color: rgb(163, 163, 162);
+}
+img {
+    width: 20px;
+    height: 20px;
+}
+.sidebar {
+    margin-left: 10%;
+}
+.sectionPrinc {
+    display: flex;
+    align-items: center;
+    gap: 30%;
+}
+.sectionPrinc img {
+    width: 25px;
+    height: 25px;
+}
+
+.sectionPrinc .logoZ {
+    width: 30px;
+    height: 30px;
+    margin-right: 2%;
+}
+.champP {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+
+.grouveMs {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+
+.artiste {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+.chansons {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+}
+.sectionPrinc:hover {
+    background-color: rgb(50, 50, 61);
+}
+.grouveMs:hover {
+    background-color: rgb(50, 50, 61);
+}
+.artiste:hover {
+    background-color: rgb(50, 50, 61);
+}
+.chansons:hover {
+    background-color: rgb(50, 50, 61);
+}

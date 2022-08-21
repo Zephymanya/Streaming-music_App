@@ -1,0 +1,27 @@
+h1 {
+    font-size: 25px;
+}
+.titrages {
+    color: rgb(83, 83, 83);
+}
+.titrage1 {
+    color: rgb(255, 255, 255);
+}
+.bton {
+    width: 16em;
+    height: 2em;
+    border-radius: 20px;
+    border: 0ch;
+    margin-top: 0.5em;
+    font-size: large;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bton{
+    margin-top: 50%;
+}

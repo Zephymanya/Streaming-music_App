@@ -1,0 +1,40 @@
+h2 {
+    color: rgb(99, 99, 97);
+    font-size: medium;
+}
+.imag {
+    width: 200px;
+    height: 200px;
+}
+.vueDensemble {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4%;
+}
+
+.imag {
+    border: 1px solid rgb(136, 136, 136);
+}
+.allerAgauche {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    box-shadow: 1px 1px 2px 1px rgba(146, 146, 146, 0.2);
+    border: none;
+    color: rgb(175, 175, 175);
+}
+
+.include {
+    margin-top: 5%;
+}
+
+.modif {
+    border-radius: 100px;
+}
+.affChm1 .titleH1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
