@@ -17,7 +17,7 @@ function App() {
 
   const valeurAthentic = {
     idClient: "3279a6db55dd434cb860bd9c44321ec7",
-    redirectUri: "http://localhost:3000/Accueil",
+    redirectUri: "https://2z-music.netlify.app/Accueil",
     apiUrl: "https://accounts.spotify.com/authorize",
     response: "token",
   };
