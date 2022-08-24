@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c2744315.css",
+    "main.js": "/static/js/main.dac633b3.js",
+    "static/media/pinkjpg.jpg": "/static/media/pinkjpg.2be5ef02654af5be36a5.jpg",
+    "static/media/logo ZIiikk.jpg": "/static/media/logo ZIiikk.1ed9cb0a1a01980d2321.jpg",
+    "static/media/mhd.jpg": "/static/media/mhd.1b97ad6414d2505482de.jpg",
+    "static/media/Gims.jpg": "/static/media/Gims.933dad3a311f9c77a673.jpg",
+    "static/media/jbTh.jpg": "/static/media/jbTh.fe7cd96145999a7f92dc.jpg",
+    "static/media/ferregola.jpg": "/static/media/ferregola.0be1da043dd215a361d0.jpg",
+    "static/media/subliminal.jpg": "/static/media/subliminal.8f009a9628db3012927d.jpg",
+    "static/media/Mpr.jpg": "/static/media/Mpr.b6e50daffcae1e42c827.jpg",
+    "static/media/werra.jpeg": "/static/media/werra.3555512c532fbae63611.jpeg",
+    "static/media/blackM.jpg": "/static/media/blackM.a66174abd37f189e83b6.jpg",
+    "static/media/dadjuR.jpg": "/static/media/dadjuR.8030cf959fbaeafe479b.jpg",
+    "static/media/Rhiana.jpg": "/static/media/Rhiana.ffa6c7b2999bd9a39af8.jpg",
+    "static/media/hiro.jpg": "/static/media/hiro.53aa0232bd3bfe9d357c.jpg",
+    "static/media/dadju.jpg": "/static/media/dadju.ea36150b27ae63a6c658.jpg",
+    "static/media/mprMusic.jpg": "/static/media/mprMusic.0a3f90346c5b6e41c3bf.jpg",
+    "static/media/fallyAl.jpeg": "/static/media/fallyAl.56e7aac7318dc61afa6e.jpeg",
+    "index.html": "/index.html",
+    "main.c2744315.css.map": "/static/css/main.c2744315.css.map",
+    "main.dac633b3.js.map": "/static/js/main.dac633b3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2744315.css",
+    "static/js/main.dac633b3.js"
+  ]
+}

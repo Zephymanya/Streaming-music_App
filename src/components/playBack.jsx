@@ -9,7 +9,11 @@ export default function PlayBack() {
   const { playLecture, uri } = useContext(dataContext);
   return (
     <div className="playback_content">
-      <SpotifyPlayer uris={uri} play={playLecture} />
+      <SpotifyPlayer
+        token={localStorage.getItem("token")}
+        uris={uri}
+        play={playLecture}
+      />
     </div>
   );
 }
