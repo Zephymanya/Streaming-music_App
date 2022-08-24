@@ -2,7 +2,7 @@ import React from "react";
 import "./style/accueil.css";
 import NavBar from "./NavBar";
 import Sidebar from "./Sidebar";
-import Tout2 from "./tout2";
+import Tout2 from "./Tout2";
 import { NavLink } from "react-router-dom";
 
 export default function nouvelle() {

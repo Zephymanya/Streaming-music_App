@@ -1,64 +1,87 @@
-import { useEffect, useState } from "react";
-import Connexion from "./components/connexion";
+import Connexion from "./components/Connexion";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Inscription from "./components/inscription";
 import Accueil from "./components/Accueil";
 import Album from "./components/Album";
-import Artiste from "./components/artiste";
+import Artiste from "./components/Artiste";
 import Chanson from "./components/Chansons";
-import Tout from "./components/tout";
 import Nouvelle from "./components/nouvelle";
-import { getTokenFromUrl } from "./components/spotify";
+import RechercheMusic from "./components/RechercheMusic";
+import { dataContext } from "./components/DataContext";
+import { useEffect, useState } from "react";
 
 function App() {
-    const [token, setToken] = useState(null);
+  const [token, setToken] = useState("");
 
-    useEffect(() => {
-        const hash = getTokenFromUrl();
-        window.location.hash = "";
-        const _token = hash.access_token;
-        if (_token) setToken(token);
-        console.log("This is a token", _token);
-    }, []);
+  const [playLecture, setPlayLecture] = useState(false);
+  const [uri, setUri] = useState("");
 
-    return (
-        <div>
-            <Router>
-                <div>
-                    <Routes>
-                        <Route exact path="/" element={<Connexion />} />
-                        <Route
-                            exact
-                            path="/inscription"
-                            element={<Inscription />}
-                        />
-                        {token ? (
-                            <Route
-                                exact
-                                path="/Accueil"
-                                element={<Accueil />}
-                            />
-                        ) : (
-                            <Route exact path="/" element={<Connexion />} />
-                        )}
+  const valeurAthentic = {
+    idClient: "30f33f24818d4be79f45ef5e59474569",
+    redirectUri: "http://localhost:3000/Accueil",
+    apiUrl: "https://accounts.spotify.com/authorize",
+    response: "token",
+  };
 
-                        <Route exact path="/Nouvelle" element={<Nouvelle />} />
-                        <Route exact path="/album" element={<Album />}></Route>
-                        <Route
-                            exact
-                            path="/artiste"
-                            element={<Artiste />}
-                        ></Route>
-                        <Route
-                            exact
-                            path="/Chanson"
-                            element={<Chanson />}
-                        ></Route>
-                    </Routes>
-                </div>
-            </Router>
-        </div>
-    );
+  const scopes = [
+    "user-read-currently-playing",
+    "user-read-recently-played",
+    "user-read-playback-state",
+    "user-top-read",
+    "user-modify-playback-state",
+    "playlist-read-private",
+    "playlist-modify-private",
+    "playlist-modify-public",
+    "playlist-read-collaborative",
+    "user-read-private",
+    "user-read-email",
+    "user-library-read",
+    "user-library-modify",
+    "streaming",
+  ];
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    let token = window.localStorage.getItem("token");
+
+    if (hash) {
+      token = hash
+        .substring(1)
+        .split("&")
+        .find((element) => element.startsWith("access_token"))
+        .split("=")[1];
+
+      window.location.hash = "";
+      window.localStorage.setItem("token", token);
+    }
+    setToken(token);
+  }, []);
+
+  return (
+    <div>
+      <dataContext.Provider
+        value={{
+          scopes,
+          valeurAthentic,
+          token,
+          playLecture,
+          setPlayLecture,
+          uri,
+          setUri,
+        }}
+      >
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<Connexion />} />
+            <Route exact path="/Accueil" element={<Accueil />} />
+            <Route exact path="/Album" element={<Album />} />
+            <Route exact path="/Artiste" element={<Artiste />} />
+            <Route exact path="/Chanson" element={<Chanson />} />
+            <Route exact path="/Nouvelle" element={<Nouvelle />} />
+          </Routes>
+        </Router>
+      </dataContext.Provider>
+    </div>
+  );
 }
 
 export default App;

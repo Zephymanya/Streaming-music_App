@@ -1,144 +1,152 @@
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
 body {
-    margin: 0%;
-    padding: 0%;
-    background-image: url("/src/images/pinkjpg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    text-decoration: none;
-    font-family: "Comfortaa", sans-serif;
+  margin: 0%;
+  padding: 0%;
+  background-image: url("/src/images/pinkjpg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  text-decoration: none;
+  font-family: "Comfortaa", sans-serif;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .principe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 60%;
-    width: 30%;
-    height: 80%;
-    background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 60%;
+  width: 30%;
+  height: 80%;
+  background-color: black;
 }
 .contenaire {
-    /* display: grid;
+  /* display: grid;
     place-content: center; */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .titrage {
-    display: flex;
-    gap: 5%;
-    justify-content: center;
+  display: flex;
+  gap: 5%;
+  justify-content: center;
 }
 h1 {
-    font-size: 25px;
+  font-size: 25px;
 }
 .titre1 {
-    color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 .titre2 {
-    color: rgb(83, 83, 83);
+  color: rgb(83, 83, 83);
 }
-.champs {
-    margin: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
+.btnConnect {
+  background-color: rgb(209, 209, 209);
+  margin: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+}
+.btnCon {
+  width: 10em;
+  text-align: center;
+  padding: 10%;
+  color: black;
 }
 
 input {
-    width: 21.5em;
-    background-color: rgb(104, 103, 103);
-    border: 2ch;
-    height: 2.4em;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
+  width: 21.5em;
+  background-color: rgb(104, 103, 103);
+  border: 2ch;
+  height: 2.4em;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 input::placeholder {
-    color: white;
+  color: white;
 }
 
 .btn {
-    width: 16em;
-    height: 2em;
-    border-radius: 20px;
-    border: 0ch;
-    margin-top: 0.5em;
-    font-size: large;
+  width: 16em;
+  height: 2em;
+  border-radius: 20px;
+  border: 0ch;
+  margin-top: 0.5em;
+  font-size: large;
 }
 h2 {
-    font-size: medium;
+  font-size: medium;
 }
 img {
-    width: 35px;
-    height: 35px;
+  width: 35px;
+  height: 35px;
 }
 .batonFB {
-    display: flex;
-    align-items: center;
-    width: 80%;
-    gap: 50px;
-    padding-left: 6%;
-    padding-right: 10%;
-    border-radius: 30px;
-    height: 100%;
-    border: 2px solid white;
-    color: white;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  gap: 50px;
+  padding-left: 6%;
+  padding-right: 10%;
+  border-radius: 30px;
+  height: 100%;
+  border: 2px solid white;
+  color: white;
 }
 .batonG {
-    display: flex;
-    align-items: center;
-    width: 80%;
-    gap: 50px;
-    border-radius: 30px;
-    padding-left: 6%;
-    padding-right: 10%;
-    height: 100%;
-    border: 2px solid white;
-    color: white;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  gap: 50px;
+  border-radius: 30px;
+  padding-left: 6%;
+  padding-right: 10%;
+  height: 100%;
+  border: 2px solid white;
+  color: white;
 }
 .mouvLogo {
-    margin-top: -30%;
-    margin-bottom: 10%;
-    display: flex;
-    justify-content: center;
+  margin-top: -30%;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: center;
 }
 .mouvLogo img {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .mouvLogo {
-    animation: rotation 8s infinite linear;
+  animation: rotation 10s infinite linear;
 }
 
 @keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 @media screen and (max-width: 600px) {
-    body {
-        width: max-content;
-    }
+  body {
+    width: max-content;
+  }
 
-    .principe {
-        width: 90%;
-        height: 95%;
-    }
+  .principe {
+    width: 90%;
+    height: 95%;
+  }
 }
 
 /* @media screen and (min-width: 810px) {
