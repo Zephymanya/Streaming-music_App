@@ -1,5 +1,10 @@
 import Connexion from "./components/Connexion";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Accueil from "./components/Accueil";
 import Album from "./components/Album";
 import Artiste from "./components/Artiste";
@@ -11,13 +16,13 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [token, setToken] = useState("");
-
+  console.log(token);
   const [playLecture, setPlayLecture] = useState(false);
   const [uri, setUri] = useState("");
 
   const valeurAthentic = {
     idClient: "3279a6db55dd434cb860bd9c44321ec7",
-    redirectUri: "https://2z-music.netlify.app/",
+    redirectUri: window.location.origin + "/Accueil",
     apiUrl: "https://accounts.spotify.com/authorize",
     response: "token",
   };
