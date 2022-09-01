@@ -18,7 +18,7 @@ function App() {
 
   const valeurAthentic = {
     idClient: "3279a6db55dd434cb860bd9c44321ec7",
-    redirectUri: "https://streaming-music-app.vercel.app/Accueil#",
+    redirectUri: "https://streaming-music-app.vercel.app/Accueil",
     apiUrl: "https://accounts.spotify.com/authorize",
     response: "token",
   };
