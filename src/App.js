@@ -8,25 +8,22 @@ import {
 import Accueil from "./components/Accueil";
 import Album from "./components/Album";
 import Artiste from "./components/Artiste";
-import Chanson from "./components/Chansons";
-import Nouvelle from "./components/nouvelle";
-import RechercheMusic from "./components/RechercheMusic";
 import { dataContext } from "./components/DataContext";
 import { useEffect, useState } from "react";
 
 function App() {
   const [token, setToken] = useState("");
-  console.log(token);
   const [playLecture, setPlayLecture] = useState(false);
   const [uri, setUri] = useState("");
 
   const valeurAthentic = {
     idClient: "3279a6db55dd434cb860bd9c44321ec7",
-    redirectUri: window.location.origin + "/Accueil",
+    redirectUri: "https://streaming-music-app.vercel.app/Accueil#",
     apiUrl: "https://accounts.spotify.com/authorize",
     response: "token",
   };
-
+  // http://localhost:3000/Accueil
+  // https://streaming-music-app.vercel.app/Accueil#
   const scopes = [
     "user-read-email",
     "user-read-private",
@@ -59,13 +56,15 @@ function App() {
         .find((element) => element.startsWith("access_token"))
         .split("=")[1];
       // token =
-      //   "BQC6sua8ANzrqFprccrMalEwYDvWxoB-baBImSv0jCOZxnhPzAD_Zvw-KsZvdZnyClfsI9m3dqmC6iEjsw5C2dn-Y0evWTW4roi8KtgOfCCPRV_8HjJTq-ZG9H7In-u8CoDC2HV5c1GCFXNwbqj0lUVyHUXAO45WFbpc6NG4ULPAmPBU_kjx4XmwdNLJtp_Srfq6lRraCbqgSY4Ve3b8VWEonmY9ypUjFpU1zTRaWrjxZ_PyTmcEVOruO3ldalsMAmQ0S65DZsv_p1ubcRfUlzYUstU_pRKNvXv4im3hxzifXNTrvAoY_98sZTBt_2xJaP3hBjcoK0FIP5P2m-M";
+      //   "BQA2YTr6FTbLPL7SuaputBvpUe2yLMS5gSPnZUAqTZcPulMjgZQ4SAnxZJku6cZE0m3vzHyQpCCv_n-t1oaMvIi5JtCeG_S4mcoCdA6qjaTMNikxFz94xtr6nMeg2yauN4tzcwYshCvMoY3LEMa5Z6vSdO2AdZXG0vAr3I2v4P3CzqhwZb5P9jVJnCAsOo03pebl_7BXpgYxmLK-C7Jhtrj_LJ8lX8ttxe5w3XJKFlnstPiBV5G0WTnk8FDS3PtS75GZ2K_DycE";
 
       window.location.hash = "";
       window.localStorage.setItem("token", token);
     }
     setToken(token);
   }, []);
+
+  let userToken = window.localStorage.getItem("token");
 
   return (
     <div>
@@ -82,12 +81,24 @@ function App() {
       >
         <Router>
           <Routes>
-            <Route exact path="/" element={<Connexion />} />
-            <Route exact path="/Accueil" element={<Accueil />} />
-            <Route exact path="/Album" element={<Album />} />
-            <Route exact path="/Artiste" element={<Artiste />} />
-            <Route exact path="/Chanson" element={<Chanson />} />
-            <Route exact path="/Nouvelle" element={<Nouvelle />} />
+            {!userToken ? (
+              <>
+                <Route exact path="/" element={<Connexion />} />
+                <Route
+                  path="/*"
+                  element={
+                    userToken ? <Navigate replace to="/" /> : <Connexion />
+                  }
+                />
+              </>
+            ) : (
+              <>
+                <Route exact path="/" element={<Connexion />} />
+                <Route exact path="/Accueil" element={<Accueil />} />
+                <Route exact path="/Album" element={<Album />} />
+                <Route exact path="/Artiste" element={<Artiste />} />
+              </>
+            )}
           </Routes>
         </Router>
       </dataContext.Provider>
