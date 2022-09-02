@@ -1,0 +1,45 @@
+.contentRecherche {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5%;
+  margin-bottom: 5%;
+}
+
+.resultRecherche {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 205px !important;
+  height: 260 !important;
+  background-color: rgb(20, 20, 20);
+  margin-top: 3%;
+  border-radius: 10px;
+}
+.contenaireMap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 182px !important;
+  height: 100%;
+}
+
+.titreRecherche {
+  line-height: 1em;
+  width: 100%;
+}
+
+.titreName {
+  line-height: 1.5em;
+  font-size: 15px;
+}
+.imageRech {
+  margin-top: 5%;
+  border-radius: 10px;
+  width: 180px;
+  height: 180px;
+}
+.titreArt {
+  line-height: 1em;
+  font-size: 17px;
+}
