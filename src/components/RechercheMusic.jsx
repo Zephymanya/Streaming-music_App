@@ -1,28 +1,36 @@
 import React from "react";
-import SpotifyWebApi from "spotify-web-api-js";
+import "./style/recherche.css";
 import { useContext, usState } from "react";
 import { dataContext } from "./DataContext";
-
-const spotify = new SpotifyWebApi();
 
 export default function RechercheMusic({ recherMusic }) {
   const { token, playLecture, setPlayLecture, uri, setUri } =
     useContext(dataContext);
 
   return (
-    <div className="vueDensemble">
+    <div className="contentRecherche">
       {recherMusic.map((item) => {
         return (
           <div
-            className="affChm1"
+            className="resultRecherche"
             onClick={() => {
               setPlayLecture(true);
               setUri(item.uri);
             }}
           >
-            <img src={item.album.images[0].url} alt="" className="imag" />
-            <h2>{item.name} </h2>
-            <h2>{item.artists[0].name} </h2>
+            <div className="contenaireMap">
+              <img
+                src={item.album.images[0].url}
+                alt=""
+                className="imageRech"
+              />
+              <div className="titreRecherche">
+                <h2 className="titreName">
+                  <span>{item.name} </span>{" "}
+                </h2>
+                <h2 className="titreArt">{item.artists[0].name} </h2>
+              </div>
+            </div>
           </div>
         );
       })}

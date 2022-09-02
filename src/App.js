@@ -50,13 +50,13 @@ function App() {
     let token = window.localStorage.getItem("token");
 
     if (hash) {
-      // token = hash
-      //   .substring(1)
-      //   .split("&")
-      //   .find((element) => element.startsWith("access_token"))
-      //   .split("=")[1];
-      token =
-        "BQAVNV_5ATD9mrrAPXBZMDVu23PQo9xZ5zf1o-68HSPX6fJPI6MlMaXb6Kr6M875eOyBdZIoem1bDmQRthSsmmAXviqTdP95qpgl_O3o4A050k4zgsEXonGyYtwbXv7WQvKa3XUyr05UjtFhF6zNii2PLow3sg3DPgx4EYAIwVfipZM4Slg2KURs7UKwjpr6w0nh5MntNPpGSZFY80lITAMB5Qi0uA386GRvtQeG8dyMOjoc1zBGahqH8cw1b9k5pee0HvOp36k";
+      token = hash
+        .substring(1)
+        .split("&")
+        .find((element) => element.startsWith("access_token"))
+        .split("=")[1];
+      // token =
+      //   "BQAVNV_5ATD9mrrAPXBZMDVu23PQo9xZ5zf1o-68HSPX6fJPI6MlMaXb6Kr6M875eOyBdZIoem1bDmQRthSsmmAXviqTdP95qpgl_O3o4A050k4zgsEXonGyYtwbXv7WQvKa3XUyr05UjtFhF6zNii2PLow3sg3DPgx4EYAIwVfipZM4Slg2KURs7UKwjpr6w0nh5MntNPpGSZFY80lITAMB5Qi0uA386GRvtQeG8dyMOjoc1zBGahqH8cw1b9k5pee0HvOp36k";
 
       window.location.hash = "";
       window.localStorage.setItem("token", token);
