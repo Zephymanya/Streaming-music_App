@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./style/tout.css";
 import { dataContext } from "./DataContext";
 import SpotifyWebApi from "spotify-web-api-js";
+import { NavLink } from "react-router-dom";
 
 const spotify = new SpotifyWebApi();
 export default function Tout() {
@@ -25,6 +26,11 @@ export default function Tout() {
 
   return (
     <div className="vueDensemble">
+      <div className="linBar">
+        <NavLink to={"/Accueil"}>
+          <h1 className="tout">Play Liste</h1>
+        </NavLink>
+      </div>
       {musicNew.map((item) => {
         setPlayLecture(true);
         setUri(item.track.uri);
