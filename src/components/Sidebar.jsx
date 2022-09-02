@@ -3,7 +3,7 @@ import logo from "../icones/logo ZIiikk.jpg";
 import mik from "../icones/Microsoft Groove.png";
 import play from "../icones/Playlist.png";
 import add from "../icones/Add Song.png";
-import menu from "../icones/Menu.png";
+
 import "./style/sidebar.css";
 import SpotifyWebApi from "spotify-web-api-js";
 import { dataContext } from "./DataContext";
@@ -48,7 +48,6 @@ export default function Sidebar() {
               <h1>Accueil</h1>
             </NavLink>
           </div>
-          <img src={menu} alt="" className="menuM" />
         </div>
         <NavLink to={"/album"}>
           <div className="grouveMs">
