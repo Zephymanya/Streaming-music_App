@@ -1,9 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import logo from "../icones/logo ZIiikk.jpg";
+import home from "../icones/Home.png";
 import mik from "../icones/Microsoft Groove.png";
-import play from "../icones/Playlist.png";
-import add from "../icones/Add Song.png";
-
 import "./style/sidebar.css";
 import SpotifyWebApi from "spotify-web-api-js";
 import { dataContext } from "./DataContext";
@@ -44,7 +41,7 @@ export default function Sidebar() {
         <div className="sectionPrinc">
           <div className="champP">
             <NavLink to={"/Accueil"} className="champP">
-              <img src={logo} alt="" className="logoZ" />
+              <img src={home} alt="" className="logoZ" />
               <h1>Accueil</h1>
             </NavLink>
           </div>
@@ -55,16 +52,6 @@ export default function Sidebar() {
             <h1>Album</h1>
           </div>
         </NavLink>
-        <NavLink to={"/artiste"}>
-          <div className="artiste">
-            <img src={play} alt="" />
-            <h1>Artistes</h1>
-          </div>
-        </NavLink>
-        <div className="chansons">
-          <img src={add} alt="" />
-          <h1>Chansons</h1>
-        </div>
         <div className="userInfo">
           <img src={user.image} alt="" className="userImg" />
           <h1 className="userName">{user.name} </h1>

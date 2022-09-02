@@ -6,7 +6,7 @@
   /* width: 100%; */
   padding: 0 2%;
   height: 60px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgb(97, 97, 97);
 }
 .bar {
   color: white;

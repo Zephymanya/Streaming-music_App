@@ -25,16 +25,6 @@ export default function Accueil() {
         </div>
 
         <div className="contentAccueil">
-          <div className="linBar">
-            <NavLink to={"/Accueil"}>
-              <h1 className="tout">Play Liste</h1>
-            </NavLink>
-
-            <NavLink to={"/nouvelle"}>
-              <h1>Noubelles Chansons</h1>
-            </NavLink>
-          </div>
-
           <div className="includ">
             {checkSearch ? (
               <RechercheMusic recherMusic={recherMusic} />
