@@ -55,9 +55,16 @@ export default function Sidebar() {
         <div className="userInfo">
           <img src={user.image} alt="" className="userImg" />
           <h1 className="userName">{user.name} </h1>
-          <NavLink to={"/"} className="retour">
-            <div className="deconnect">Deconnexion</div>
-          </NavLink>
+
+          <div
+            className="deconnect"
+            onClick={() => {
+              localStorage.clear();
+              window.location.replace("/");
+            }}
+          >
+            Deconnexion
+          </div>
         </div>
       </div>
     </div>

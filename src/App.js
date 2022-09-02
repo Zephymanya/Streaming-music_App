@@ -18,7 +18,7 @@ function App() {
 
   const valeurAthentic = {
     idClient: "3279a6db55dd434cb860bd9c44321ec7",
-    redirectUri: "https://streaming-music-app.vercel.app/Accueil",
+    redirectUri: "http://localhost:3000/Accueil",
     apiUrl: "https://accounts.spotify.com/authorize",
     response: "token",
   };
@@ -50,13 +50,13 @@ function App() {
     let token = window.localStorage.getItem("token");
 
     if (hash) {
-      // token = hash
-      //   .substring(1)
-      //   .split("&")
-      //   .find((element) => element.startsWith("access_token"))
-      //   .split("=")[1];
-      token =
-        "BQBj3xVv9wZSk77mnZ-u0iPsZrqYJ6Mhb18ophIDEHE_7jhhfFUYtsETPpvkwjOnJ4fYt6myR13xLx1esF03UKGyBUJBIIdUKTpFa94obajkqfX7tDxZOD1opuglslaBZyTOYbK6B4LzGQWOC7bSpjQi7gk80ZyMM0HWdnJUbn06hbKkvXkQQVgnYe0wlp6fdQxDamDESMv1JAeT9nWdcaw2W-vQ3QDsJLngGyH56hBNpSjOEQfEVjUvwFwbaBRh78rd8Ilufyo";
+      token = hash
+        .substring(1)
+        .split("&")
+        .find((element) => element.startsWith("access_token"))
+        .split("=")[1];
+      // token =
+      //   "BQBj3xVv9wZSk77mnZ-u0iPsZrqYJ6Mhb18ophIDEHE_7jhhfFUYtsETPpvkwjOnJ4fYt6myR13xLx1esF03UKGyBUJBIIdUKTpFa94obajkqfX7tDxZOD1opuglslaBZyTOYbK6B4LzGQWOC7bSpjQi7gk80ZyMM0HWdnJUbn06hbKkvXkQQVgnYe0wlp6fdQxDamDESMv1JAeT9nWdcaw2W-vQ3QDsJLngGyH56hBNpSjOEQfEVjUvwFwbaBRh78rd8Ilufyo";
 
       window.location.hash = "";
       window.localStorage.setItem("token", token);

@@ -25,28 +25,34 @@ export default function Tout() {
   }, []);
 
   return (
-    <div className="vueDensemble">
-      <div className="linBar">
+    <div className="ContentMusR">
+      <div className="titreDuCont">
         <NavLink to={"/Accueil"}>
-          <h1 className="tout">Play Liste</h1>
+          <h1 className="tout">Musiques récentes</h1>
         </NavLink>
       </div>
-      {musicNew.map((item) => {
-        setPlayLecture(true);
-        setUri(item.track.uri);
-        return (
-          <div
-            className="affChm1"
-            onClick={() => {
-              playLecture();
-            }}
-          >
-            <img src={item.track.album.images[0].url} alt="" className="imag" />
-            <h2>{item.track.name} </h2>
-            <h2>{item.track.artists[0].name} </h2>
-          </div>
-        );
-      })}
+      <div className="contentRensent">
+        {musicNew.map((item) => {
+          return (
+            <div
+              className="affChm1"
+              onClick={() => {
+                // playLecture();
+                setPlayLecture(true);
+                setUri(item.track.uri);
+              }}
+            >
+              <img
+                src={item.track.album.images[0].url}
+                alt=""
+                className="imag"
+              />
+              <h2>{item.track.name} </h2>
+              <h2>{item.track.artists[0].name} </h2>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

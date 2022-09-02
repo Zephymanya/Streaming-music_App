@@ -6,7 +6,6 @@ import Sidebar from "./Sidebar";
 import Tout from "./Tout";
 import PlayBack from "./playBack";
 import RechercheMusic from "./RechercheMusic";
-import { NavLink } from "react-router-dom";
 
 export default function Accueil() {
   const [recherMusic, setRecherMusic] = useState([]);
