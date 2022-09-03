@@ -10,11 +10,17 @@ import Album from "./components/Album";
 import Artiste from "./components/Artiste";
 import { dataContext } from "./components/DataContext";
 import { useEffect, useState } from "react";
+import { spotify } from "./components/Sidebar";
 
 function App() {
   const [token, setToken] = useState("");
   const [playLecture, setPlayLecture] = useState(false);
   const [uri, setUri] = useState("");
+  const [user, setUser] = useState({
+    userId: "",
+    name: "",
+    image: "",
+  });
 
   const valeurAthentic = {
     idClient: "3279a6db55dd434cb860bd9c44321ec7",
@@ -66,6 +72,24 @@ function App() {
 
   let userToken = window.localStorage.getItem("token");
 
+  useEffect(() => {
+    setTimeout(() => {
+      spotify.getMe().then(
+        function (data) {
+        
+          setUser({
+            userId: data.id,
+            name: data.display_name,
+            image: data.images.length !== 0 ? data.images[0].url : "",
+          });
+        },
+        function (err) {
+          console.error(err);
+        }
+      );
+    }, 2000);
+  }, []);
+
   return (
     <div>
       <dataContext.Provider
@@ -77,6 +101,8 @@ function App() {
           setPlayLecture,
           uri,
           setUri,
+          user,
+          setUser,
         }}
       >
         <Router>

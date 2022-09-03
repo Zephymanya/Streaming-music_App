@@ -1,51 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style/album.css";
 import "./style/tout.css";
+import { dataContext } from "./DataContext";
+import { useContext } from "react";
 
+import { spotify } from "./Sidebar";
 
-export default function contenAlbum() {
-    return (
-        <div>
-            <div className="vueDensemble">
-                <div className="affChm1">
-                    <img src={""} alt="" className="imag" />
-                    <h2>Rehab</h2>
-                </div>
+export default function ContenAlbum() {
+  const { user } = useContext(dataContext);
+  const [playListe, setPlayListe] = useState([]);
 
-                <div className="affChm1">
-                    <img src={""} alt="" className="imag" />
-                    <h2>De la haine à l'amour</h2>
-                </div>
+  const handleplay = () => {
+    spotify.getUserPlaylists(user.userId).then(function (data) {
+      setPlayListe(data.items);
+    });
+  };
 
-                <div className="affChm1">
-                    <img src={""} alt="" className="imag" />
-                    <h2>Gentleman 2.0</h2>
-                </div>
+  useEffect(() => {
+    handleplay();
+  }, []);
 
+  return (
+    <div>
+      {playListe.length !== 0 ? (
+        <div className="vueDensemble">
+          {playListe.map(
+            (item) =>
+              item.name && (
                 <div className="affChm1">
-                    <img src={""} alt="" className="imag" />
-                    <h2>Dadju</h2>
+                  <img src={item.images[0].url} alt="" className="imag" />
+                  <h2>{item.name} </h2>
                 </div>
-                <div className="affChm1">
-                    <img src={""} alt="" className="imag" />
-                    <h2>Ceinture noire</h2>
-                </div>
-
-                <div className="affChm1">
-                    <img src={""} alt="" className="imag" />
-                    <h2>Subliminal</h2>
-                </div>
-
-                <div className="affChm1">
-                    <img src={""} alt="" className="imag" />
-                    <h2>La nuit porte conseil</h2>
-                </div>
-
-                <div className="affChm1">
-                    <img src={""} alt="" className="imag" />
-                    <h2>Seseko</h2>
-                </div>
-            </div>
+              )
+          )}
         </div>
-    );
+      ) : null}
+    </div>
+  );
 }

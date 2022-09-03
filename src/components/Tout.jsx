@@ -14,7 +14,7 @@ export default function Tout() {
 
   useEffect(() => {
     setTimeout(() => {
-      spotify.getMyRecentlyPlayedTracks({ limit: 8 }, function (err, data) {
+      spotify.getMyRecentlyPlayedTracks({}, function (err, data) {
         if (err) console.error(err);
         else {
           console.log(data.items);
@@ -31,7 +31,7 @@ export default function Tout() {
           <h1 className="tout">Musiques récentes</h1>
         </NavLink>
       </div>
-      <div className="contentRensent">
+      <div className="contentRencent">
         {musicNew.map((item) => {
           return (
             <div
@@ -47,8 +47,10 @@ export default function Tout() {
                 alt=""
                 className="imag"
               />
-              <h2>{item.track.name} </h2>
-              <h2>{item.track.artists[0].name} </h2>
+              <div className="titreRec">
+                <h2 className="titreRec1">{item.track.name} </h2>
+                <h2 className="titreRec2">{item.track.artists[0].name} </h2>
+              </div>
             </div>
           );
         })}

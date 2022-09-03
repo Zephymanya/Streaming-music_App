@@ -10,6 +10,7 @@ import RechercheMusic from "./RechercheMusic";
 export default function Accueil() {
   const [recherMusic, setRecherMusic] = useState([]);
   const [checkSearch, setCheckSearch] = useState(false);
+
   return (
     <div>
       <div className="navbar">

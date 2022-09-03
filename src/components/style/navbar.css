@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   background-color: black;
-  /* width: 100%; */
   padding: 0 2%;
   height: 60px;
   border-bottom: 1px solid rgb(97, 97, 97);
@@ -32,5 +31,8 @@ input {
 }
 
 input::placeholder {
-  color: white;
+  text-align: center;
+  background: transparent url("/src/icones/Search.png");
+  background-position-x: 30%;
+  background-repeat: no-repeat;
 }

@@ -30,7 +30,7 @@ export default function NavBar({ setRecherMusic, setCheckSearch }) {
       </div>
       <div>
         <input
-          type="text"
+          type="search"
           placeholder="Recherche"
           className="cherche"
           onChange={trackSearch}
