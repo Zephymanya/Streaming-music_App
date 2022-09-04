@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Accueil from "./components/Accueil";
 import Album from "./components/Album";
-import Artiste from "./components/Artiste";
+// import Artiste from "./components/Artiste";
 import { dataContext } from "./components/DataContext";
 import { useEffect, useState } from "react";
 import { spotify } from "./components/Sidebar";
@@ -76,7 +76,6 @@ function App() {
     setTimeout(() => {
       spotify.getMe().then(
         function (data) {
-        
           setUser({
             userId: data.id,
             name: data.display_name,
@@ -122,7 +121,7 @@ function App() {
                 <Route exact path="/" element={<Connexion />} />
                 <Route exact path="/Accueil" element={<Accueil />} />
                 <Route exact path="/Album" element={<Album />} />
-                <Route exact path="/Artiste" element={<Artiste />} />
+                {/* <Route exact path="/Artiste" element={<Artiste />} /> */}
               </>
             )}
           </Routes>

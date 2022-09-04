@@ -2,7 +2,7 @@
   display: block;
   background-color: rgb(12, 11, 11);
   color: white;
-  min-width: 200px;
+  width: 210px !important;
   height: 100%;
   border-right: 1px solid rgb(97, 97, 97);
 }
@@ -11,7 +11,8 @@ h1 {
   color: rgb(163, 163, 162);
 }
 .sidebar {
-  margin-left: 10%;
+  height: 100%;
+  width: 100%;
 }
 .sectionPrinc {
   display: flex;
@@ -35,25 +36,29 @@ h1 {
 }
 
 .grouveMs {
+  padding-top: 3%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10%;
+  gap: 2%;
 }
-
-.artiste {
+.grouveM {
+  padding-top: 3%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10%;
+  gap: 2%;
 }
-.chansons {
-  display: flex;
-  align-items: center;
-  gap: 10%;
+.grouveM img {
+  margin-left: 7%;
 }
 .sectionPrinc:hover {
   background-color: rgb(50, 50, 61);
 }
 .grouveMs:hover {
+  background-color: rgb(50, 50, 61);
+}
+.grouveM:hover {
   background-color: rgb(50, 50, 61);
 }
 .artiste:hover {
@@ -63,8 +68,8 @@ h1 {
   background-color: rgb(50, 50, 61);
 }
 .userImg {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 30px;
 }
 .userName {
@@ -76,13 +81,12 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: -2%;
 }
 
 .deconnect {
   color: antiquewhite;
   background-color: rgb(41, 41, 41);
-  width: 10em;
+  width: 9em;
   height: 2em;
   border-radius: 20px;
   text-align: center;
@@ -91,12 +95,13 @@ h1 {
   align-items: center;
   cursor: pointer;
   margin-top: 5%;
-  margin-right: 8%;
+  /* margin-right: %; */
 }
 
 .userGet {
   display: flex;
-  align-items: center;
-  gap: 2%;
-  width: 100%;
+  justify-content: center;
+  gap: 4%;
+  width: 150px !important;
+  height: 50px;
 }

@@ -5,6 +5,8 @@ import { NavLink } from "react-router-dom";
 import ContenAlbum from "./contenAlbum";
 import { dataContext } from "./DataContext";
 import { useContext } from "react";
+import PlayBack from "./playBack";
+import "./style/album.css";
 
 export default function Album() {
   const { user } = useContext(dataContext);
@@ -23,6 +25,9 @@ export default function Album() {
             <ContenAlbum />
           </div>
         </div>
+      </div>
+      <div className="playback">
+        <PlayBack />
       </div>
     </div>
   );

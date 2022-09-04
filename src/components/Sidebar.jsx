@@ -16,7 +16,6 @@ export default function Sidebar() {
   return (
     <div className="contentSide">
       <div className="sidebar">
-        <div className="sectionPrinc"></div>
         <NavLink to={"/Accueil"}>
           <div className="grouveMs">
             <img src={home} alt="" />
@@ -24,7 +23,7 @@ export default function Sidebar() {
           </div>
         </NavLink>
         <NavLink to={"/album"}>
-          <div className="grouveMs">
+          <div className="grouveM">
             <img src={mik} alt="" />
             <h1>Play liste</h1>
           </div>

@@ -27,7 +27,11 @@ export default function Accueil() {
         <div className="contentAccueil">
           <div className="includ">
             {checkSearch ? (
-              <RechercheMusic recherMusic={recherMusic} />
+              checkSearch !== false ? (
+                <RechercheMusic recherMusic={recherMusic} />
+              ) : (
+                <Tout />
+              )
             ) : (
               <Tout />
             )}

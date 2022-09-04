@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./style/album.css";
-import "./style/tout.css";
+// import "./style/tout.css";
 import { dataContext } from "./DataContext";
 import { useContext } from "react";
+import PlayListe from "./PlayListe";
 
 import { spotify } from "./Sidebar";
 
@@ -21,13 +22,13 @@ export default function ContenAlbum() {
   }, []);
 
   return (
-    <div>
+    <div className="ContenPlayListe">
       {playListe.length !== 0 ? (
-        <div className="vueDensemble">
+        <div className="ContentPlay">
           {playListe.map(
             (item) =>
               item.name && (
-                <div className="affChm1">
+                <div className="affPlay">
                   <img src={item.images[0].url} alt="" className="imag" />
                   <h2>{item.name} </h2>
                 </div>
@@ -35,6 +36,12 @@ export default function ContenAlbum() {
           )}
         </div>
       ) : null}
+      <div playTable>
+        <PlayListe />
+      </div>
+      <div playback>
+        
+      </div>
     </div>
   );
 }

@@ -1,0 +1,82 @@
+.ContenPlayListe {
+  display: flex;
+  gap: 5%;
+  margin-top: 3%;
+  margin-left: 10%;
+}
+.affPlay {
+  margin-bottom: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 170px !important;
+  width: 170px !important;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgb(96, 96, 96);
+}
+.affPlay :hover {
+  width: 180px;
+  width: 180px;
+  transition: 2s;
+}
+.ContentPlay {
+  border-radius: 10px;
+  padding: 2% 3% 0% 3%;
+  box-shadow: rgb(159, 159, 159) 0px 3px 10px;
+  margin-bottom: 10%;
+}
+.ContentTableau {
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  padding-bottom: 1%;
+  border-bottom: 1px solid rgb(97, 97, 97);
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #667771;
+  color: white;
+  font-size: 20px;
+}
+
+td {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  font-size: 17px;
+}
+tr:hover {
+  font-size: 17px;
+  background-color: rgb(66, 66, 66);
+}
+.th1 {
+  width: 300px !important;
+}
+.th2 {
+  width: 200px !important;
+}
+
+.th3 {
+  width: 100px !important;
+}
+
+.td1 {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+}
+.ligne {
+  margin-top: 4%;
+  border-bottom: 1px solid rgb(97, 97, 97);
+}
+
+.playback {
+  margin-top: -3%;
+}
